@@ -15,7 +15,6 @@ int main() {
     
     // 큐의 front와 back 확인
     printf("큐의 맨 앞 요소: %d\n", q.front());
-    printf("큐의 맨 뒤 요소: %d\n", q.back());
     printf("\n");
     
     // pop 테스트
@@ -71,7 +70,6 @@ int main() {
     
     // 큐에서 요소 확인
     printf("\n큐의 첫 번째 요소: %d\n", resizeQ.front());
-    printf("큐의 마지막 요소: %d\n", resizeQ.back());
     
     return 0;
 }
