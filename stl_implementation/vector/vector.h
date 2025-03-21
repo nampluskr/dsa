@@ -12,12 +12,12 @@ struct Vector {
         if (tail == capacity - 1) resize(capacity * 2);
         arr[++tail] = data;
     }
-    void pop_back() {
-        if (tail >= 0) tail--;
+    void pop_back() { 
+        if (!empty()) tail--;
     }
     void clear() { tail = -1; }
-    int size() const { return tail + 1; }
     bool empty() const { return tail == -1; }
+    int size() const { return tail + 1; }
 
     T& operator[](int idx) { return arr[idx]; }
     T* begin() { return arr; }
