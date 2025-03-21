@@ -8,6 +8,26 @@ struct Vector {
     Vector() { arr = new T[capacity]; }
     ~Vector() { delete[] arr; }
 
+    // 복사 생성자: other의 capacity와 tail을 복사하고, 새로운 메모리를 할당하여 요소들을 복사
+    Vector(const Vector& other) {
+        capacity = other.capacity;
+        tail = other.tail;
+        arr = new T[capacity];
+        for (int i = 0; i <= tail; i++) arr[i] = other.arr[i];
+    }
+
+    // 복사 대입 연산자: 자기 자신과의 대입을 체크한 후, 기존 메모리를 해제하고 other의 데이터를 깊은 복사
+    Vector& operator=(const Vector& other) {
+        if (this != &other) {
+            delete[] arr;
+            capacity = other.capacity;
+            tail = other.tail;
+            arr = new T[capacity];
+            for (int i = 0; i <= tail; i++) arr[i] = other.arr[i];
+        }
+        return *this;
+    }
+
     void push_back(const T& data) {
         if (tail == capacity - 1) resize(capacity * 2);
         arr[++tail] = data;
