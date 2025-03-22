@@ -1,18 +1,18 @@
 #pragma once
 
 struct RangeMin {
-    static const int identity = 0x7FFFFFFF;
-    int operator()(int a, int b) const { return a < b ? a : b; }
+    static const int identity = 0x7FFFFFFF;     // 최대 정수
+    int merge(int a, int b) const { return a < b ? a : b; }
 };
 
 struct RangeMax {
-    static const int identity = 0x80000000;
-    int operator()(int a, int b) const { return a < b ? b : a; }
+    static const int identity = 0x80000000;     // 최소 정수
+    int merge(int a, int b) const { return a < b ? b : a; }
 };
 
 struct RangeSum {
     static const int identity = 0;
-    int operator()(int a, int b) const { return a + b; }
+    int merge(int a, int b) const { return a + b; }
 };
 
 template<typename Operation>
@@ -20,7 +20,7 @@ struct SegmentTree {
     int* tree;
     int n;
     static const int identity = Operation::identity;
-    Operation merge;
+    Operation op;
 
     SegmentTree(int* arr, int size) {
         n = size;
@@ -39,9 +39,8 @@ struct SegmentTree {
         int mid = start + (end - start) / 2;
         int lhs = build(arr, node*2, start, mid);
         int rhs = build(arr, node*2 + 1, mid + 1, end);
-        return tree[node] = merge(lhs, rhs);
+        return tree[node] = op.merge(lhs, rhs);
     }
-
     int query(int left, int right, int node, int start, int end) {
         if (right < start || left > end) return identity;
         if (left <= start && end <= right) return tree[node];
@@ -49,9 +48,8 @@ struct SegmentTree {
         int mid = (start + end) / 2;
         int lhs = query(left, right, node*2, start, mid);
         int rhs = query(left, right, node*2 + 1, mid + 1, end);
-        return merge(lhs, rhs);
+        return op.merge(lhs, rhs);
     }
-
     int update(int idx, int value, int node, int start, int end) {
         if (idx < start || idx > end) return tree[node];
         if (start == end) return tree[node] = value;
@@ -59,6 +57,6 @@ struct SegmentTree {
         int mid = (start + end) / 2;
         int lhs = update(idx, value, node*2, start, mid);
         int rhs = update(idx, value, node*2 + 1, mid + 1, end);
-        return tree[node] = merge(lhs, rhs);
+        return tree[node] = op.merge(lhs, rhs);
     }
 };
