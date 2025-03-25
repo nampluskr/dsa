@@ -94,3 +94,104 @@ Let me now explain each of these problem types in detail in Korean, without incl
 풀이: 우선순위를 정해 하나의 가중치로 최적화하고 나머지는 제약조건으로 사용하거나, 파레토 최적해를 구하기 위해 다차원 배열로 최단 거리를 관리합니다.
 
 각 문제 유형에 접근할 때는 기본 다익스트라 알고리즘을 이해하고, 문제의 특성에 맞게 자료구조와 상태 관리 방식을 변형하는 것이 핵심입니다.
+
+
+
+사용자는 앞서 설명한 다익스트라 알고리즘 문제 유형별로 실제 문제 링크를 추가해달라고 요청하고 있습니다. 각 유형에 맞는 실제 문제들을 백준, 프로그래머스, LeetCode 등의 플랫폼에서 찾아서 추가해야 합니다.
+
+제가 알고 있는 각 유형별 대표적인 문제들을 찾아 정리하겠습니다:
+
+1. 기본 최단 경로 찾기:
+   - 백준 1753: 최단경로 
+   - 백준 1916: 최소비용 구하기
+   - LeetCode 743: Network Delay Time
+
+2. 특정 조건이 있는 최단 경로:
+   - 백준 1162: 도로포장
+   - 백준 1277: 발전소 설치
+   - 백준 2211: 네트워크 복구
+   - 프로그래머스: 배달
+
+3. 최단 경로 복원:
+   - 백준 11779: 최소비용 구하기 2
+   - 백준 9370: 미확인 도착지
+
+4. 다중 시작점 다익스트라:
+   - 백준 18352: 특정 거리의 도시 찾기
+   - 백준 14938: 서강그라운드
+
+5. K번째 최단 경로:
+   - 백준 1854: K번째 최단경로 찾기
+   - LeetCode 787: Cheapest Flights Within K Stops
+
+6. 양방향 다익스트라:
+   - 백준 1238: 파티
+   - 백준 1504: 특정한 최단 경로
+
+7. 특정 노드를 반드시 방문하는 최단 경로:
+   - 백준 1504: 특정한 최단 경로
+   - 백준 9370: 미확인 도착지
+
+8. 다익스트라와 동적 계획법 결합:
+   - 백준 10217: KCM Travel
+   - 백준 1486: 등산
+
+9. 최대 용량 경로 찾기:
+   - 백준 6086: 최대 유량
+   - LeetCode 1514: Path with Maximum Probability
+
+10. 다중 가중치 그래프:
+    - 백준 1956: 운동
+    - 백준 2982: 국왕의 방문
+
+이 목록을 기반으로 각 유형별 문제 링크를 정리하겠습니다.
+
+# 코딩테스트 다익스트라 알고리즘 문제 유형 및 풀이 방법 (문제 링크 포함)
+
+## 1. 기본 최단 경로 찾기 (가장 빈출)
+- **백준 1753**: [최단경로](https://www.acmicpc.net/problem/1753) - 한 정점에서 모든 정점까지의 최단 경로
+- **백준 1916**: [최소비용 구하기](https://www.acmicpc.net/problem/1916) - 시작도시에서 도착도시까지 최소비용
+- **LeetCode 743**: [Network Delay Time](https://leetcode.com/problems/network-delay-time/) - 신호가 모든 노드에 도달하는 최소 시간
+
+## 2. 특정 조건이 있는 최단 경로
+- **백준 1162**: [도로포장](https://www.acmicpc.net/problem/1162) - K개의 도로를 포장하여 최단 경로 구하기
+- **백준 1277**: [발전소 설치](https://www.acmicpc.net/problem/1277) - 특정 거리 이하로만 연결 가능
+- **프로그래머스**: [배달](https://school.programmers.co.kr/learn/courses/30/lessons/12978) - 특정 시간 이내 배달 가능한 마을 수
+
+## 3. 최단 경로 복원
+- **백준 11779**: [최소비용 구하기 2](https://www.acmicpc.net/problem/11779) - 최단 경로와 방문한 도시 출력
+- **백준 9370**: [미확인 도착지](https://www.acmicpc.net/problem/9370) - 특정 경로를 지나는 최단 경로
+
+## 4. 다중 시작점 다익스트라
+- **백준 18352**: [특정 거리의 도시 찾기](https://www.acmicpc.net/problem/18352) - 특정 거리에 있는 모든 도시 찾기
+- **백준 14938**: [서강그라운드](https://www.acmicpc.net/problem/14938) - 수색 범위 내에서 얻을 수 있는 최대 아이템
+
+## 5. K번째 최단 경로
+- **백준 1854**: [K번째 최단경로 찾기](https://www.acmicpc.net/problem/1854) - 목적지까지의 K번째 최단 경로
+- **LeetCode 787**: [Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/) - K번 이내 경유로 가능한 최소 비용
+
+## 6. 양방향 다익스트라
+- **백준 1238**: [파티](https://www.acmicpc.net/problem/1238) - 왕복 최단 거리의 최댓값 구하기
+- **백준 1504**: [특정한 최단 경로](https://www.acmicpc.net/problem/1504) - 두 정점을 반드시 지나는 최단 경로
+
+## 7. 특정 노드를 반드시 방문하는 최단 경로
+- **백준 1504**: [특정한 최단 경로](https://www.acmicpc.net/problem/1504) - 두 정점을 반드시 지나는 최단 경로
+- **백준 9370**: [미확인 도착지](https://www.acmicpc.net/problem/9370) - 특정 간선을 지나는 최단 경로
+- **프로그래머스**: [경주로 건설](https://school.programmers.co.kr/learn/courses/30/lessons/67259) - 특정 지점들을 지나는 최소 비용 경로
+
+## 8. 다익스트라와 동적 계획법 결합
+- **백준 10217**: [KCM Travel](https://www.acmicpc.net/problem/10217) - 비용 제한 내에서의 최단 시간 경로
+- **백준 1486**: [등산](https://www.acmicpc.net/problem/1486) - 높이 차이에 따른 시간 계산과 제한 시간 내 왕복
+- **LeetCode 1631**: [Path With Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort/) - 경로의 최대 높이 차이 최소화
+
+## 9. 최대 용량 경로 찾기
+- **백준 1939**: [중량제한](https://www.acmicpc.net/problem/1939) - 다리가 견딜 수 있는 최대 중량 찾기
+- **LeetCode 1514**: [Path with Maximum Probability](https://leetcode.com/problems/path-with-maximum-probability/) - 최대 확률 경로 찾기
+
+## 10. 다중 가중치 그래프
+- **백준 1956**: [운동](https://www.acmicpc.net/problem/1956) - 사이클의 최소 비용 찾기
+- **백준 2982**: [국왕의 방문](https://www.acmicpc.net/problem/2982) - 시간에 따라 변하는 도로 상황에서의 최단 경로
+- **프로그래머스**: [합승 택시 요금](https://school.programmers.co.kr/learn/courses/30/lessons/72413) - 출발지에서 합승하다가 각자의 목적지로 가는 최소 비용
+
+이 문제들은 각 유형의 대표적인 예시입니다. 실제 코딩테스트를 준비하실 때 이 문제들을 풀어보시면 다익스트라 알고리즘의 다양한 응용법을 익히는 데 도움이 될 것입니다.
+
